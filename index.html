@@ -3,9 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <h1 style="color: #2e63ef;">Loading...</h1>
+    </div>
+
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.getElementById('loading-screen').style.display = 'none';
+        }, 3000);
+      });
+    </script>
+
+    <style>
+      #loading-screen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3498db;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <div class="wrapper">
+      <nav>
+        <img src="assets/logo-landscape.jpg" alt="Pentateq logo" class="logo" />
+        <ul>
+          <li> <a href="#">Home </a></li>
+          <li> <a href="#">About </a></li>
+          <li href="services.html">Services</li>
+          <button id="click"><a href="contactform.html"> Contact Us </a></button>
+        </ul>
+      </nav>
+
+      <!-- -----------Landing Page---------------------- -->
+      <div class="landing">
+        <div class="ball"></div>
+        <div class="ball" id="ball-1"></div>
+        <div class="ball" id="ball-2"></div>
+
+        <div class="left-panel">
+
+          <h1>Revulotionizing <br>
+            the IT <span>Industry</span></h1>
+            <p>
+              We Design, Build and Maintain your
+               websites and <br>
+               apps to an industry standard
+            </p>
+            <a href="#description"><button>Let's Get Started</button></a>
+
+        </div>
+        <div class="right-panel">
+
+          <img src="assets/index-bg.jpg" alt="tech">
+
+        </div>
+      </div>
+      <!-- -----------Basic Description-------------------- -->
+      <div class="description" id="description">
+        <div class="left">
+
+          <img src="assets/pentateQ-logo-ref (1).png" alt="">
+          
+
+        </div>
+        <div class="right">
+
+          <div class="content">
+            <h1> Welcome to Pentateq</h1>
+            <p>
+              We are a software development company that specializes in creating
+              websites, mobile applications and tutorials to help you get the most
+              out of your technology. <br>
+              We turn your requirements into a product.
+            </p>
+            <button> <a href="services.html"> Learn More </a></button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="origin">
+        <div class="left">
+
+          <h2>We specialize in <br>technologies such as:</h2>
+          <div class="tech-logos">
+                <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=fAMVO_fuoOuC&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=wPohyHO_qO1a&format=png&color=000000" alt="">
+                <img src="https://img.icons8.com/?size=100&id=74402&format=png&color=000000" alt="">
+          </div>
+          <button>View More</button>
+
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <style>
+          .vertical-line {
+            border-left: 2px solid #5215ae;
+            height: 700px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        </style>
+        <div class="right">
+          <h1>We Believe In TeamWork</h1>
+          <p>Our Team of specialised <br> individuals is here to help you.</p>
+          <img src="assets/team.png" alt="">
+          <button>Meet The Team</button>
+
+        </div>
+      </div>
+      
+      <footer>
+        
+        <div class="links">
+          <li> <a href="#">Home </a></li>
+          <li> <a href="#">About </a></li>
+          <li> <a href="services.html">Services </a></li>
+          <li> <a href="contactform.html">Contact Us </a></li>
+        </div>
+        <p>
+          &copy; 2025 Pentateq. All rights reserved.
+        </p>
+       
+      </footer>
+    </div>
   </body>
 </html>
