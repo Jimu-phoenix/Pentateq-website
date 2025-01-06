@@ -2,6 +2,9 @@
     --penta-purple: #5215ae;
     --penta-blue: #2e63ef;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body{
     margin: 0;
@@ -26,8 +29,11 @@ nav{
     height: 10vh;
     background-color: white;
 }
-nav img{
+nav .logo{
     height: 80%;
+}
+nav .menu{
+    display: none;
 }
 ul{
     display: flex;
@@ -55,6 +61,7 @@ li a{
     position: relative;
     top: -10%;
     color: white;
+    padding: 10px 20px;
     background-color: var(--penta-purple);
     text-decoration: none;
     border: none;
@@ -110,7 +117,9 @@ li a{
 .right-panel img{
     position: relative;
     top: 7.5%;
-    object-fit: cover;
+    width: auto;
+    background-blend-mode: multiply;
+    /* object-fit: cover; */
 }
 .ball{
     position: absolute;
@@ -188,6 +197,9 @@ li a{
 .description button:hover{
     color: white;
     background-color: var(--penta-purple);
+}
+.description button a:hover{
+    color: white;
 }
 .origin{
     width: 100vw;
@@ -270,6 +282,163 @@ footer{
 }
 .links li:hover{
     opacity: 1;
+}
+
+
+/* ------------Responsiveness on Mobile Device------------------- */
+
+@media screen and (max-width: 768px) {
+
+ .wrapper{
+    overflow: hidden;
+ }
+    nav{
+    width: 150vw;
+    display: flex;
+    overflow: visible;
+    justify-content: space-between;
+ }   
+nav ul {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+}
+ nav ul{
+    position: relative;
+    top: -2vh;
+    left: 100vw; 
+    /* right: 50px; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: flex-start;
+    z-index: 1;
+ }
+ #click, #navbar li{
+    margin-top: .5rem;
+ }
+ nav .menu{
+    position: relative;
+    top: 10px;
+    left: 80px;
+    display: block;
+    width: 2rem;
+    border: none;
+    height: 50%;
+ }
+ nav .menu img{
+    width: 100%;
+ }
+ nav .logo{
+    height: 50%;
+ }
+ .landing{
+    flex-direction: column;
+    text-align: center;
+    z-index: 0;
+ }
+ .landing h1{
+    font-size: 2.5rem;
+    margin-left: 0;
+ }
+ .landing p{
+    font-size: 1rem;
+    margin-left: 0;
+ }
+ .landing button{
+    margin-left: 0;
+ }
+ .landing .left-panel, .right-panel{
+    width: 100%;
+ }
+ .right-panel img{
+    width: 100%;
+    
+ }
+ .ball, #ball-1, #ball-2{
+    display: none;
+ }
+ .description{
+    flex-direction: column;
+    text-align: center;
+ }
+ .description .left, .description .right{
+    margin: 0;
+    width: 100%;
+ }
+ .description .left img{
+    width: 50%;
+    margin: 0;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+ }
+ .description .right h1, .description .right p{
+    margin-left: 0;
+    text-align: center;
+ }
+ .description .right h1{
+    font-size: 3.5rem;
+ }
+ .vertical-line{
+    display: none;
+ }
+ .origin{
+    flex-direction: column;
+    text-align: center;
+ }
+ .origin .left, .origin .right{
+    width: 100%;
+    padding: 0;
+ }
+ .origin .left h2, .origin .right h1{
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+ }
+ .origin .right p{
+    margin-left: 0;
+    text-align: center;
+    font-size: 1rem;
+ }
+ .origin .right img{
+    width: 80%;
+    margin: 0;
+    left: 0;
+    top: 0;
+    transform: translate(0, 0);
+ }
+    .origin button{
+        margin-left: 0;
+    }
+    .origin .left button{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+ .origin .tech-logos{
+    width: 100%;
+    margin: 0;
+ }
+    .origin .tech-logos img{
+        width: 70px;
+        height: 70px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        height: 20vh;
+    }
+    footer .links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .links li{
+        font-size: 1.25rem;
+    }
+ 
 }
 
 @keyframes animate {

@@ -42,6 +42,18 @@
         animation: spin 2s linear infinite;
       }
 
+      @media screen and (max-width: 768px) {
+        #loading-screen{
+          width: 100vw;
+          height: 100vh;
+        }
+        .spinner {
+          width: 60px;
+          height: 60px;
+        }
+        
+      }
+
       @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
@@ -50,12 +62,14 @@
     <div class="wrapper">
       <nav>
         <img src="assets/logo-landscape.jpg" alt="Pentateq logo" class="logo" />
-        <ul>
+        <button class="menu" onclick=nav()><img src="https://img.icons8.com/?size=100&id=Rdp3AydLFY2A&format=png&color=000000" alt=""></button>
+        <ul id="navbar">
           <li> <a href="#">Home </a></li>
           <li> <a href="#">About </a></li>
-          <li href="services.html">Services</li>
-          <button id="click"><a href="contactform.html"> Contact Us </a></button>
+          <li> <a href="services.html">Services </a></li>
+          <li><button id="click"><a href="contactform.html"> Contact Us </a></button></li>
         </ul>
+        
       </nav>
 
       <!-- -----------Landing Page---------------------- -->
@@ -66,14 +80,14 @@
 
         <div class="left-panel">
 
-          <h1>Revulotionizing <br>
+          <h1>Revolutionizing<br>
             the IT <span>Industry</span></h1>
             <p>
               We Design, Build and Maintain your
                websites and <br>
-               apps to an industry standard
+               apps to an industry standard.
             </p>
-            <a href="#description"><button>Let's Get Started</button></a>
+            <a href="#description"><button>Let's Get Started!</button></a>
 
         </div>
         <div class="right-panel">
@@ -100,7 +114,7 @@
               out of your technology. <br>
               We turn your requirements into a product.
             </p>
-            <button> <a href="services.html"> Learn More </a></button>
+            <a href="services.html"> <button>Learn More</button> </a>
           </div>
 
         </div>
@@ -128,7 +142,7 @@
         <style>
           .vertical-line {
             border-left: 2px solid #5215ae;
-            height: 700px;
+            height: 100vh;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -156,6 +170,18 @@
         </p>
        
       </footer>
+      <script>
+        let menu = document.querySelector('.menu');
+        let navbar = document.getElementById('navbar');
+        function nav(){   
+          if(navbar.style.left != '-100vw'){       
+            navbar.style.left = '-100vw';
+          }else{
+            navbar.style.left = '10vw';
+          }
+          
+        }
+      </script>
     </div>
   </body>
 </html>
