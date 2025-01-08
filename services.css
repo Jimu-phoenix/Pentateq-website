@@ -4,7 +4,10 @@
 }
 :root{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+        --penta-purple: #5215ae;
+        --penta-blue: #2e63ef;
+    }
+
 a{
     text-decoration: none;
 }
@@ -18,38 +21,55 @@ a{
     background-position: bottom;
 }
 nav{
-    height: 10%;
-    width: 50%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    text-align: center;
-}
-.page-title{
-    font-size: 2rem;
-    text-align: center;
-    transform: translate(50%);
-}
-.logo{
-    position: relative;
-    bottom: 5%;
-    width: 20%;
-    margin-left: 40%;
-}
-nav button{
-    margin: .5rem;
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    color: #5215ae;
-    box-shadow: 2px 2px 2px;
+    width: 100%;
+    height: 10vh;
     background-color: white;
-    border-radius: 50%;
-    transition: ease;
 }
-nav button:hover{
-    width: 4.5rem;
-    border-radius: 10px;
+nav .logo{
+    height: 80%;
+}
+nav .menu{
+    display: none;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+    /* width: 30%; */
+}
+nav li{
+    list-style: none;
+    text-decoration: none;
+    margin: 15px 20px;
+    font-family: default;
+    font-size: 1.55rem;
+    opacity: .8;
+    cursor: pointer;
+}
+nav li:hover{
+    opacity: 1;
+    border-bottom: var(--penta-purple) 2px solid;
+}
+nav li a{
+    text-decoration: none;
+    color: black;
+}
+ul #active{
+    opacity: .5;
+}
+#click{
+    position: relative;
+    top: -10%;
+    color: white;
+    padding: 10px 20px;
+    background-color: var(--penta-purple);
+    text-decoration: none;
+    border: none;
+}
+#click a{
+    color: white;
 }
 .cover{
     width: 85%;
@@ -117,16 +137,45 @@ nav button:hover{
 h1{
     color: purple;
 }
-p{
+.service p{
     margin-left: 2px;
     margin-right: 2px;
     margin-top: 10px;
     font-size: 1.5rem;
     font-family: sans-serif;
 }
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--penta-purple);
+    color: white;
+}
+.links{
+    display: flex;
+    cursor: pointer;
+}
+.links li{
+    list-style: none;
+    opacity: 0.7;
+    margin: 15px 20px;
+    font-family: default;
+    font-size: 1.55rem;
+}
+.links li a{
+    color: white;
+}
+.links li:hover{
+    opacity: 1;
+}
+
 
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+   
    
     p{
         font-size: 1rem;
@@ -162,40 +211,57 @@ p{
 
     .wrapper{
         width: 100%;
-        height: 155vh;
+        height: 375vh;
         display: flex;
         flex-direction: column;
         background-image: none;
-        background-repeat: no-repeat;
-         background-size: cover; 
-        background-position: bottom;
+        overflow: hidden;
     }
-    nav{
-        height: 10%;
+
+     nav{
+        width: 150vw;
         display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        overflow: visible;
+        justify-content: space-between;
+     }   
+    nav ul {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        
     }
-    .logo{
+     nav ul{
         position: relative;
-        bottom: 5%;
-        width: 40%;
-        margin-left: 30%;
-    }
-    nav button{
-        margin: .5rem;
-        width: 4rem;
-        border-radius: 10px;
-        height: 3rem;
+        /* top: -2vh; */
+        left: 100vw; 
+        /* right: 50px; */
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: flex-start;
+        z-index: 1;
+     }
+     #click, #navbar li{
+        margin-top: .5rem;
+     }
+     nav .menu{
+        position: relative;
+        top: 10px;
+        left: 70px;
+        display: block;
+        width: 2rem;
         border: none;
-        color: #5215ae;
-        box-shadow: 2px 2px 2px;
-        background-color: white;
-        transition: ease;
-    }
+        height: 50%;
+     }
+     nav .menu img{
+        width: 100%;
+     }
+     nav .logo{
+        height: 50%;
+     }
     .cover{
         width: 85%;
-        height: 40%;
+        height: 40vh;
         max-height: 40%;
         align-self: center;
         justify-self: center;
@@ -219,7 +285,7 @@ p{
     }
     .services-list{
         position: relative;
-        top: -5%;
+        top: -2%;
         width: 80%;
         height: 50rem;
         align-self: center;
@@ -256,12 +322,28 @@ p{
         font-weight: bold;
         animation: float .75s ease-in-out infinite;
         }
-    p{
+    .service p{
         margin-left: 2px;
         margin-right: 2px;
         margin-top: 10px;
         font-size: 1.5rem;
         font-family: sans-serif;
+    }
+    footer{
+        position: relative;
+        top: 205vh;
+        display: flex;
+        flex-direction: column;
+        height: 17.5vh;
+    }
+    footer .links{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .links li{
+        font-size: 1.25rem;
+        margin: 0;
     }
     
     

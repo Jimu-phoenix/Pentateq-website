@@ -12,9 +12,14 @@
     <div class="wrapper">
         <nav>
         
-               <a href="index.html"> <button>Back</button></a>
-            
-            <h1 class="page-title">Our Services</h1>
+            <img src="assets/logo-landscape.jpg" alt="Pentateq logo" class="logo" />
+            <button class="menu" onclick=nav()><img src="https://img.icons8.com/?size=100&id=Rdp3AydLFY2A&format=png&color=000000" alt=""></button>
+            <ul id="navbar">
+              <li> <a href="index.html">Home </a></li>
+              <li> <a href="#">About </a></li>
+              <li id="active"> <a href="#">Services </a></li>
+              <li><button id="click"><a href="contactform.html"> Contact Us </a></button></li>
+            </ul>
         </nav>
         <div class="cover">
             <img src="/assets/gear.png" alt="" class="gear">
@@ -80,6 +85,32 @@
 
 
        </div>
+
+       <footer>
+        
+        <div class="links">
+          <li> <a href="#">Home </a></li>
+          <li> <a href="#">About </a></li>
+          <li> <a href="services.html">Services </a></li>
+          <li> <a href="contactform.html">Contact Us </a></li>
+        </div>
+        <p>
+          &copy; 2025 Pentateq. All rights reserved.
+        </p>
+       
+      </footer>
+      <script>
+        let menu = document.querySelector('.menu');
+        let navbar = document.getElementById('navbar');
+        function nav(){   
+          if(navbar.style.left != '-110vw'){       
+            navbar.style.left = '-110vw';
+          }else{
+            navbar.style.left = '10vw';
+          }
+          
+        }
+      </script>
 
     </div>
 
